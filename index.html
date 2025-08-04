@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Search Engine</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+  <h1 class="title">Find Your Image</h1>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for images...">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <div class="tags">
+    <span class="tag" data-query="nature">Nature</span>
+    <span class="tag" data-query="technology">Technology</span>
+    <span class="tag" data-query="sports">Sports</span>
+    <span class="tag" data-query="people">People</span>
+  </div>
+
+  <div id="loading" class="loading hidden">Loading...</div>
+
+  <section id="gallerySection" class="gallery-section hidden">
+    <div id="gallery" class="gallery"></div>
+    <button id="showMoreBtn" class="show-more hidden">Show More</button>
+  </section>
+
+  <div id="lightbox" class="lightbox">
+    <span id="lightboxClose">&times;</span>
+    <img id="lightboxImg" alt="preview" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
