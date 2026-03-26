@@ -1,39 +1,71 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image Search Engine</title>
+  <title>Image Search</title>
+  <!-- Import hand-drawn font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 </head>
+
 <body>
-  <h1 class="title">Find Your Image</h1>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search for images...">
-    <button id="searchBtn">Search</button>
+  <div class="hand-container main-wrapper">
+    <header>
+      <h1 class="title">Image Search</h1>
+      <div class="scribble-line"></div>
+    </header>
+
+    <div class="search-box">
+      <div class="input-wrapper">
+        <input type="text" id="searchInput" placeholder="Search for sketches, photos, etc...">
+      </div>
+      <button id="searchBtn" class="hand-btn btn-primary">
+        <span class="btn-text">Search!</span>
+      </button>
+    </div>
+
+    <div class="tags">
+      <button class="tag hand-btn" data-query="nature"><span class="btn-text">Nature</span></button>
+      <button class="tag hand-btn" data-query="art"><span class="btn-text">Art</span></button>
+      <button class="tag hand-btn" data-query="animals"><span class="btn-text">Animals</span></button>
+      <button class="tag hand-btn" data-query="cities"><span class="btn-text">Cities</span></button>
+    </div>
   </div>
 
-  <div class="tags">
-    <span class="tag" data-query="nature">Nature</span>
-    <span class="tag" data-query="technology">Technology</span>
-    <span class="tag" data-query="sports">Sports</span>
-    <span class="tag" data-query="people">People</span>
+  <div id="loading" class="loading hidden">
+    <div class="loader-scribble">...Loading...</div>
   </div>
 
-  <div id="loading" class="loading hidden">Loading...</div>
-
-  <section id="gallerySection" class="gallery-section hidden">
+  <section id="gallerySection" class="gallery-section hidden hand-container">
     <div id="gallery" class="gallery"></div>
-    <button id="showMoreBtn" class="show-more hidden">Show More</button>
+    <div class="show-more-wrapper">
+      <button id="showMoreBtn" class="hand-btn btn-primary show-more hidden">
+        <span class="btn-text">Load More</span>
+      </button>
+    </div>
   </section>
 
   <div id="lightbox" class="lightbox">
-    <span id="lightboxClose">&times;</span>
-    <img id="lightboxImg" alt="preview" />
+    <button id="lightboxClose" class="hand-btn close-btn">
+      <span class="btn-text">X</span>
+    </button>
+    <div class="lightbox-content hand-container">
+      <img id="lightboxImg" alt="preview" />
+      <button id="lightboxDownload" class="hand-btn download-btn">
+        <span class="btn-text">Download</span>
+      </button>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
